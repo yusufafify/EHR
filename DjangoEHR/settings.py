@@ -4,7 +4,7 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+from os import environ, getenv
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -91,10 +91,11 @@ WSGI_APPLICATION = 'DjangoEHR.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lab3server',
-        'USER': 'lab3database',
+        'NAME': 'postgres',
+        'USER': 'lab3database@lab3server1',
         'PASSWORD': 'Mypassword3',
-        'HOST': 'lab3server.postgres.database.azure.com',
+        # 'PASSWORD':os. getenv['DB_PASSWORD'],
+        'HOST': 'lab3server1.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS':{'sslmode':'require'},
     }
