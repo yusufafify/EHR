@@ -14,17 +14,11 @@ SECRET_KEY = 'django-insecure-8$l%as9%1nmvmn7e1x*uxtt1o)zo!q(o(2d*%i5ka-o!$)h=e3
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['lab3taversion.azurewebsites.net','127.0.0.1']
-
-
 ALLOWED_HOSTS =[os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
-# CSRF_TRUSTED_ORIGINS = ['https://'+ 'lab3taversion.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']]
 
 # Application definition
 
@@ -82,21 +76,23 @@ WSGI_APPLICATION = 'DjangoEHR.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# version 1
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-    # postgres://lab3database:'Mypassword3'@lab3server.postgres.database.azure.com:5432/lab3database
-# }lab3database
+#     }
+#    }
+
+# version2
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lab3database',
+        'NAME': 'postgres',
         'USER': 'lab3database',
         'PASSWORD': 'Mypassword3',
         # 'PASSWORD':os. getenv['DB_PASSWORD'],
-        'HOST': 'lab3server.postgres.database.azure.com',
+        'HOST': 'ehrserver.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS':{'sslmode':'require'},
     }
