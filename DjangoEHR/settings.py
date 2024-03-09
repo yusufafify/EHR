@@ -15,15 +15,15 @@ SECRET_KEY = 'django-insecure-8$l%as9%1nmvmn7e1x*uxtt1o)zo!q(o(2d*%i5ka-o!$)h=e3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lab3taversion.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    
     'jazzmin',
     'django.contrib.admin',
+    'whitenoise.runserver_nostatic',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     # 'patient.user_restrict_middleware.UserRestrictMiddleware',
     "django_htmx.middleware.HtmxMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -129,6 +130,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "patient/static/",
       # Add your static files directory here
 ]
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"#add this line
+
 
 # Media files (user uploaded files)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
