@@ -92,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mydatabase',
         'USER': 'lab3database',
-        'PASSWORD': os.getinv("DB_PASSWORD"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
         'HOST': 'lab3server.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS':{'sslmode':'require'},
