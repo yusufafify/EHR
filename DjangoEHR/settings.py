@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'DjangoEHR.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',
+        'NAME': 'lab3server',
         'USER': 'lab3database',
         'PASSWORD': 'Mypassword3',
         'HOST': 'lab3server.postgres.database.azure.com',
