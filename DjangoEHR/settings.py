@@ -17,6 +17,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['lab3taversion.azurewebsites.net','127.0.0.1']
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_TRUSTED_ORIGINS = [
+    'lab3taversion.azurewebsites.net'
+]
 
 # Application definition
 
