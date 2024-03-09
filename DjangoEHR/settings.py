@@ -86,16 +86,17 @@ WSGI_APPLICATION = 'DjangoEHR.wsgi.application'
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+    # }
+    # postgres://lab3database:'Mypassword3'@lab3server.postgres.database.azure.com:5432/lab3database
+# }lab3database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'lab3database',
-        'USER': 'lab3database@lab3server1',
+        'USER': 'lab3database',
         'PASSWORD': 'Mypassword3',
         # 'PASSWORD':os. getenv['DB_PASSWORD'],
-        'HOST': 'lab3server1.postgres.database.azure.com',
+        'HOST': 'lab3server.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS':{'sslmode':'require'},
     }
