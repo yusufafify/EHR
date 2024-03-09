@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'DjangoEHR.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'lab3database',
         'USER': 'lab3database@lab3server1',
         'PASSWORD': 'Mypassword3',
         # 'PASSWORD':os. getenv['DB_PASSWORD'],
