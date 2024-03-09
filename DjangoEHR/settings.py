@@ -17,13 +17,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['lab3taversion.azurewebsites.net','127.0.0.1']
 
+
+ALLOWED_HOSTS =[os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# CSRF_TRUSTED_ORIGINS = [
-#     'lab3taversion.azurewebsites.net'
-# ]
+
+# CSRF_TRUSTED_ORIGINS = ['https://'+ 'lab3taversion.azurewebsites.net']
 
 # Application definition
 
