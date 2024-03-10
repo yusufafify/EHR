@@ -14,11 +14,12 @@ SECRET_KEY = 'django-insecure-8$l%as9%1nmvmn7e1x*uxtt1o)zo!q(o(2d*%i5ka-o!$)h=e3
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 ALLOWED_HOSTS =[os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']]
+# CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']]
 
 # Application definition
 
@@ -84,19 +85,19 @@ WSGI_APPLICATION = 'DjangoEHR.wsgi.application'
 #     }
 #    }
 
-# version2
+# # version2
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'lab3database',
         'PASSWORD': 'Mypassword3',
-        # 'PASSWORD':os. getenv['DB_PASSWORD'],
         'HOST': 'ehrserver.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS':{'sslmode':'require'},
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -132,7 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -147,6 +148,7 @@ STATICFILES_DIRS = [
       # Add your static files directory here
 ]
 STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"#add this line
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Media files (user uploaded files)
