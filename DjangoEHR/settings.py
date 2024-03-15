@@ -78,26 +78,27 @@ WSGI_APPLICATION = 'DjangoEHR.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 # version 1
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-   }
-#
-# # # version2
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'lab3database',
-#         'PASSWORD': 'Mypassword3',
-#         'HOST': 'ehrserver.postgres.database.azure.com',
-#         'PORT': '5432',
-#         'OPTIONS':{'sslmode':'require'},
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
-# }
+#    }
+#
+# # # version2
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'yusuf',
+        'PASSWORD': 'You-20ara',
+        'HOST': 'youssefahmedafify1200883.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS':{'sslmode':'require'},
+    }
+}
 
+#postgres://yusuf:'You-20ara'@youssefahmedafify1200883.postgres.database.azure.com:5432/postgres
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
