@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
    }
-
+#
 # # # version2
 # DATABASES = {
 #     'default': {
